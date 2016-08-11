@@ -31,6 +31,7 @@ config AP6210_WEXT
 choice
     depends on AP6210
     prompt "Interrupt type"
+	default AP6210_SDIO_IRQ
 config AP6210_OOB
 	depends on AP6210
 	bool "Out-of-Band Interrupt"
@@ -39,7 +40,6 @@ config AP6210_OOB
 config AP6210_SDIO_IRQ
 	depends on  AP6210
 	bool "In-Band Interrupt"
-	default y
 	---help---
 		Interrupt through SDIO DAT[1]
 endchoice
